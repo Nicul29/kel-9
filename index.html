@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Halaman Registrasi -->
+    <div id="registerPage" class="page active">
+        <div class="container">
+            <h1>Registrasi</h1>
+            <form id="registerForm">
+                <input type="text" id="regName" placeholder="Nama Lengkap" required>
+                <input type="email" id="regEmail" placeholder="Email" required>
+                <input type="password" id="regPassword" placeholder="Password" required>
+                <button type="submit">Daftar</button>
+            </form>
+            <p>Sudah punya akun? <a href="#" onclick="showLogin()">Login di sini</a></p>
+        </div>
+    </div>
+
+    <!-- Halaman Login -->
+    <div id="loginPage" class="page">
+        <div class="container">
+            <h1>Login</h1>
+            <form id="loginForm">
+                <input type="email" id="loginEmail" placeholder="Email" required>
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <button type="submit">Masuk</button>
+            </form>
+            <p>Belum punya akun? <a href="#" onclick="showRegister()">Daftar di sini</a></p>
+        </div>
+    </div>
+
+    <!-- Dashboard -->
+    <div id="dashboardPage" class="page">
+        <div class="container">
+            <h1>Dashboard Musik</h1>
+            <p>Selamat datang! Pilih genre favoritmu:</p>
+            <div class="genres">
+                <button onclick="showGenre('indie')">Indie</button>
+                <button onclick="showGenre('pop')">Pop</button>
+                <button onclick="showGenre('rock')">Rock</button>
+                <button onclick="showGenre('rnb')">R&B</button>
+                <button onclick="showGenre('jazz')">Jazz</button>
+                <button onclick="showGenre('hiphop')">Hip-Hop</button>
+            </div>
+            <button onclick="logout()">Logout</button>
+        </div>
+    </div>
+
+    <!-- Halaman List Lagu (Dinamis) -->
+    <div id="songsPage" class="page">
+        <div class="container">
+            <h1 id="genreTitle">Genre Lagu</h1>
+            <div id="songsList" class="songs-grid">
+                <!-- Lagu akan dimuat via JS -->
+            </div>
+            <button onclick="backToDashboard()">Kembali ke Dashboard</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
